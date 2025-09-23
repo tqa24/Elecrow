@@ -1,11 +1,25 @@
+/**
+ * Wireless Info Display - ESP32 E-Paper HMI Display Controller
+ * 
+ * This project creates a web-based interface for controlling a 4.2-inch e-paper display.
+ * Features:
+ * - WiFi-enabled web server for remote control
+ * - Up to 8 configurable text rows with different font sizes
+ * - Color inversion support (black on white / white on black)
+ * - Real-time preview in web interface
+ * - Display border toggle
+ * - Input validation and error handling
+ * 
+ * Hardware: ESP32 with 4.2" e-paper display (GxEPD2_420_GYE042A87)
+ * Author: Fusion Automate
+ * Date: September 23, 2025
+ */
+
 #include <WiFi.h>
 #include <WebServer.h>
 #include <ArduinoJson.h>
 #include "GxEPD2_BW.h"
-
-// Network credentials
-const char* ssid = "Capgemini_4G";
-const char* password = "MN704116";
+#include "config.h"
 
 // Pin definitions
 #define PWR 7
@@ -14,8 +28,8 @@ const char* password = "MN704116";
 #define DC 46
 #define CS 45
 
-// Web server on port 80
-WebServer server(80);
+// Web server
+WebServer server(WEB_SERVER_PORT);
 
 // E-paper display initialization
 #include <Fonts/FreeMonoBold24pt7b.h>
@@ -273,41 +287,60 @@ const char index_html[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
+/**
+ * Control power to the e-paper display
+ * @param state HIGH to power on, LOW to power off
+ */
 void epdPower(int state) {
   pinMode(PWR, OUTPUT);
   digitalWrite(PWR, state);
 }
 
+/**
+ * Initialize the e-paper display with configured settings
+ */
 void epdInit() {
-  epd.init(115200, true, 50, false);
+  epd.init(EPD_INIT_BAUD_RATE, EPD_INIT_RESET, EPD_INIT_DELAY, EPD_INIT_PARTIAL);
   epd.setRotation(0);
   epd.setTextColor(currentSettings.invertColors ? GxEPD_WHITE : GxEPD_BLACK);
   epd.setFullWindow();
 }
 
+/**
+ * Set the font size for e-paper display
+ * @param size Font size (12, 18, or 24 points)
+ */
 void setFontSize(int size) {
   switch (size) {
-    case 12:
+    case FONT_SIZE_SMALL:
       epd.setFont(&FreeMonoBold12pt7b);
       break;
-    case 18:
+    case FONT_SIZE_MEDIUM:
       epd.setFont(&FreeMonoBold18pt7b);
       break;
-    case 24:
+    case FONT_SIZE_LARGE:
       epd.setFont(&FreeMonoBold24pt7b);
       break;
   }
 }
 
+/**
+ * Get the row height in pixels for a given font size
+ * @param fontSize Font size in points
+ * @return Row height in pixels
+ */
 int getRowHeight(int fontSize) {
   switch (fontSize) {
-    case 12: return 32;
-    case 18: return 40;
-    case 24: return 48;
-    default: return 40;
+    case FONT_SIZE_SMALL: return ROW_HEIGHT_SMALL;
+    case FONT_SIZE_MEDIUM: return ROW_HEIGHT_MEDIUM;
+    case FONT_SIZE_LARGE: return ROW_HEIGHT_LARGE;
+    default: return ROW_HEIGHT_MEDIUM;
   }
 }
 
+/**
+ * Update the e-paper display with current settings
+ */
 void updateDisplay() {
   epdPower(HIGH);
   epdInit();
@@ -316,11 +349,11 @@ void updateDisplay() {
   epd.fillScreen(currentSettings.invertColors ? GxEPD_BLACK : GxEPD_WHITE);
   
   if (currentSettings.border) {
-    epd.drawRect(0, 0, 400, 300, currentSettings.invertColors ? GxEPD_WHITE : GxEPD_BLACK);
+    epd.drawRect(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT, currentSettings.invertColors ? GxEPD_WHITE : GxEPD_BLACK);
   }
   
-  int yPos = getRowHeight(24);
-  int margin = 10;
+  int yPos = getRowHeight(FONT_SIZE_LARGE);
+  int margin = DISPLAY_MARGIN;
   
   for (int i = 0; i < currentSettings.MAX_ROWS; i++) {
     if (currentSettings.rows[i].text.length() > 0) {
@@ -340,73 +373,146 @@ void updateDisplay() {
 
 
 
+/**
+ * Generate HTML for row input controls
+ * @return HTML string containing input fields for all display rows
+ */
 String getRowInputsHTML() {
   String html = "";
   for (int i = 0; i < currentSettings.MAX_ROWS; i++) {
     html += "<div class='row-group'>";
     
-    // Text input
-    html += "<input type='text' id='row" + String(i) + "' maxlength='30' ";
+    // Text input with length limit
+    html += "<input type='text' id='row" + String(i) + "' maxlength='" + String(MAX_TEXT_LENGTH) + "' ";
     html += "placeholder='Row " + String(i + 1) + "' ";
     html += "value='" + currentSettings.rows[i].text + "' ";
     html += "onkeyup='updatePreview()'>";
     
     // Font size selector
     html += "<select id='fontSize" + String(i) + "' onchange='updatePreview()'>";
-    html += "<option value='12'" + String(currentSettings.rows[i].fontSize == 12 ? " selected" : "") + ">Small (12pt)</option>";
-    html += "<option value='18'" + String(currentSettings.rows[i].fontSize == 18 ? " selected" : "") + ">Medium (18pt)</option>";
-    html += "<option value='24'" + String(currentSettings.rows[i].fontSize == 24 ? " selected" : "") + ">Large (24pt)</option>";
+    html += "<option value='" + String(FONT_SIZE_SMALL) + "'" + String(currentSettings.rows[i].fontSize == FONT_SIZE_SMALL ? " selected" : "") + ">Small (" + String(FONT_SIZE_SMALL) + "pt)</option>";
+    html += "<option value='" + String(FONT_SIZE_MEDIUM) + "'" + String(currentSettings.rows[i].fontSize == FONT_SIZE_MEDIUM ? " selected" : "") + ">Medium (" + String(FONT_SIZE_MEDIUM) + "pt)</option>";
+    html += "<option value='" + String(FONT_SIZE_LARGE) + "'" + String(currentSettings.rows[i].fontSize == FONT_SIZE_LARGE ? " selected" : "") + ">Large (" + String(FONT_SIZE_LARGE) + "pt)</option>";
     html += "</select>";
     
-    // DEL button
+    // Clear button
     html += "<button type='button' class='del-btn' onclick='clearRow(" + String(i) + ")'>DEL</button>";
     html += "</div>";
   }
   return html;
 }
 
+/**
+ * Generate complete HTML page with current settings
+ * @return Complete HTML page as string
+ */
 String getHTML() {
   String html = String(index_html);
   html.replace("%row_inputs%", getRowInputsHTML());
   return html;
 }
 
+/**
+ * Handle HTTP request for root page
+ */
 void handleRoot() {
   server.send(200, "text/html", getHTML());
 }
 
+/**
+ * Validate display settings before applying them
+ * @param settings Settings to validate
+ * @return true if settings are valid, false otherwise
+ */
+bool validateSettings(const DisplaySettings& settings) {
+  for (int i = 0; i < settings.MAX_ROWS; i++) {
+    if (settings.rows[i].text.length() > MAX_TEXT_LENGTH) {
+      return false;
+    }
+    if (settings.rows[i].fontSize != FONT_SIZE_SMALL && 
+        settings.rows[i].fontSize != FONT_SIZE_MEDIUM && 
+        settings.rows[i].fontSize != FONT_SIZE_LARGE) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Handle display update requests from web interface
+ */
 void handleUpdate() {
   if (server.hasArg("plain")) {
     StaticJsonDocument<1024> doc;
     DeserializationError error = deserializeJson(doc, server.arg("plain"));
     
     if (!error) {
+      DisplaySettings newSettings;
       JsonArray rows = doc["rows"];
       int i = 0;
       for (JsonVariant row : rows) {
-        currentSettings.rows[i].text = row["text"].as<String>();
-        currentSettings.rows[i].fontSize = row["fontSize"].as<int>();
+        newSettings.rows[i].text = row["text"].as<String>();
+        newSettings.rows[i].fontSize = row["fontSize"].as<int>();
         i++;
       }
       
-      currentSettings.border = doc["border"].as<bool>();
-      currentSettings.invertColors = doc["invertColors"].as<bool>();
+      newSettings.border = doc["border"].as<bool>();
+      newSettings.invertColors = doc["invertColors"].as<bool>();
       
-      updateDisplay();
-      server.send(200, "text/plain", "OK");
+      // Validate settings before applying
+      if (validateSettings(newSettings)) {
+        currentSettings = newSettings;
+        updateDisplay();
+        server.send(200, "text/plain", "OK");
+      } else {
+        server.send(400, "text/plain", "Invalid settings");
+      }
     } else {
       server.send(400, "text/plain", "Invalid JSON");
     }
+  } else {
+    server.send(400, "text/plain", "No data received");
   }
 }
 
-void setup() {
-  Serial.begin(115200);
+/**
+ * Connect to WiFi with timeout and error handling
+ * @return true if connection successful, false otherwise
+ */
+bool connectWiFi() {
+  Serial.print("Connecting to WiFi network: ");
+  Serial.println(WIFI_SSID);
+  
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  
+  int attempts = 0;
+  while (WiFi.status() != WL_CONNECTED && attempts < WIFI_CONNECT_TIMEOUT) {
+    delay(WIFI_RETRY_DELAY);
+    Serial.print(".");
+    attempts++;
+  }
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println();
+    Serial.println("WiFi connected successfully!");
+    Serial.print("IP Address: ");
+    Serial.println(WiFi.localIP());
+    return true;
+  } else {
+    Serial.println();
+    Serial.println("Failed to connect to WiFi!");
+    return false;
+  }
+}
 
+/**
+ * Display startup screen with project information
+ */
+void displayStartupScreen() {
   epdPower(HIGH);
   epdInit();
   epd.fillScreen(GxEPD_WHITE);
-  epd.drawRect(0, 0, 400, 300, GxEPD_BLACK);
+  epd.drawRect(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT, GxEPD_BLACK);
   epd.setFont(&FreeMonoBold24pt7b);
   epd.setCursor(90, 70);
   epd.print("Wireless");
@@ -417,95 +523,88 @@ void setup() {
   epd.print("Fusion Automate"); 
   epd.display();
   delay(2000);
-  
-  // Connect to Wi-Fi
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-  
-  // WiFi connected - show IP address
+}
+
+/**
+ * Display WiFi connection status and IP address
+ * @param connected Whether WiFi is connected
+ * @param ipAddress IP address string (if connected)
+ */
+void displayWiFiStatus(bool connected, String ipAddress = "") {
   epd.fillScreen(GxEPD_WHITE);
-  epd.drawRect(0, 0, 400, 300, GxEPD_BLACK);
+  epd.drawRect(0, 0, DISPLAY_WIDTH, DISPLAY_HEIGHT, GxEPD_BLACK);
   epd.setFont(&FreeMonoBold18pt7b);
-  epd.setCursor(60, 70);
-  epd.print("WiFi Connected");
   
-  String ip = WiFi.localIP().toString();
-  epd.setFont(&FreeMonoBold12pt7b); // Smaller font for IP address
-  epd.setCursor(80, 150);
-  epd.print("IP: " + ip);
+  if (connected) {
+    epd.setCursor(60, 70);
+    epd.print("WiFi Connected");
+    
+    epd.setFont(&FreeMonoBold12pt7b);
+    epd.setCursor(80, 150);
+    epd.print("IP: " + ipAddress);
+  } else {
+    epd.setCursor(50, 70);
+    epd.print("WiFi Failed");
+    epd.setCursor(30, 150);
+    epd.print("Check Settings");
+  }
   
   epd.setFont(&FreeMonoBold18pt7b);
   epd.setCursor(45, 230);
   epd.print("Fusion Automate");
   epd.display();
-  delay(10000); // Show IP for 10 seconds
+  delay(IP_DISPLAY_DURATION);
+}
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("Wireless Info Display Starting...");
+
+  // Display startup screen
+  displayStartupScreen();
   
-  Serial.println("Connected to WiFi");
-  Serial.print("IP Address: ");
-  Serial.println(ip);
+  // Connect to WiFi
+  bool wifiConnected = connectWiFi();
+  
+  // Display WiFi status
+  if (wifiConnected) {
+    String ip = WiFi.localIP().toString();
+    displayWiFiStatus(true, ip);
+  } else {
+    displayWiFiStatus(false);
+    // Continue anyway for debugging purposes
+    Serial.println("Continuing without WiFi for debugging...");
+  }
   
   // Clear screen for normal operation
   epd.fillScreen(GxEPD_WHITE);
   epd.hibernate(); 
   epdPower(LOW);
   
-  // Setup web server routes
-  server.on("/", HTTP_GET, handleRoot);
-  server.on("/update", HTTP_POST, handleUpdate);
-  server.begin();
+  // Setup web server routes only if WiFi is connected
+  if (wifiConnected) {
+    server.on("/", HTTP_GET, handleRoot);
+    server.on("/update", HTTP_POST, handleUpdate);
+    server.begin();
+    Serial.println("Web server started");
+  }
   
   // Initial display update with default settings
-  currentSettings.invertColors = false;  // Ensure default color scheme
+  currentSettings.invertColors = false;
   updateDisplay();
+  
+  Serial.println("Setup completed successfully");
 }
 
-// void setup() {
-//   Serial.begin(115200);
 
 
-//   epdPower(HIGH);
-//   epdInit();
-//   epd.fillScreen(GxEPD_WHITE);
-//   epd.drawRect(0, 0, 400, 300, GxEPD_BLACK);
-//   epd.setFont(&FreeMonoBold24pt7b);
-//   epd.setCursor(90, 70);
-//   epd.print("Wireless");
-//   epd.setCursor(35, 150);
-//   epd.print("Info-Display");
-//   epd.setFont(&FreeMonoBold18pt7b);
-//   epd.setCursor(45, 230);
-//   epd.print("Fusion Automate"); 
-//   epd.display();
-//   delay(2000);
-//   epd.fillScreen(GxEPD_WHITE);
-//   epd.hibernate(); 
-//   epdPower(LOW);
-  
-  
-//   // Connect to Wi-Fi
-//   WiFi.begin(ssid, password);
-//   while (WiFi.status() != WL_CONNECTED) {
-//     delay(1000);
-//     Serial.println("Connecting to WiFi...");
-//   }
-//   Serial.println("Connected to WiFi");
-//   Serial.print("IP Address: ");
-//   Serial.println(WiFi.localIP());
-  
-//   // Setup web server routes
-//   server.on("/", HTTP_GET, handleRoot);
-//   server.on("/update", HTTP_POST, handleUpdate);
-//   server.begin();
-  
-//   // Initial display update with default settings
-//   currentSettings.invertColors = false;  // Ensure default color scheme
-//   updateDisplay();
-// }
-
+/**
+ * Main program loop - handle web server requests
+ */
 void loop() {
-  server.handleClient();
-  delay(10);  // Small delay to prevent watchdog issues
+  // Only handle web server if WiFi is connected
+  if (WiFi.status() == WL_CONNECTED) {
+    server.handleClient();
+  }
+  delay(LOOP_DELAY);  // Small delay to prevent watchdog issues
 }
