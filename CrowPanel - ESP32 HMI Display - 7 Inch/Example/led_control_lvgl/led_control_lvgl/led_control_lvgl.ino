@@ -77,6 +77,8 @@ public:
 
 LGFX lcd;
 int led;
+int brightness = 255; // Brightness level (0-255)
+// unsigned long lastUpdate = 0; // Not needed when status display is disabled
 //UI
 #define TFT_BL 2
 SPIClass& spi = SPI;
@@ -133,15 +135,23 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
 void setup()
 {
   Serial.begin(9600);
+  delay(1000); // Wait for serial to initialize
+  Serial.println("=== CrowPanel 7\" HMI Display ===");
+  Serial.println("Initializing system...");
 
+  // Initialize LED pin
   pinMode(38, OUTPUT);
   digitalWrite(38, LOW);
 
   Wire.begin(19, 20);
+  Serial.println("Initializing LCD...");
   lcd.begin();
   lcd.fillScreen(TFT_BLACK);
   lcd.setTextSize(2);
   delay(200);
+  Serial.println("LCD initialized");
+  
+  Serial.println("Initializing LVGL...");
   lv_init();
 
   touch_init();
@@ -163,31 +173,57 @@ void setup()
   indev_drv.read_cb = my_touchpad_read;
   lv_indev_drv_register(&indev_drv);
 
+  // Initialize backlight with PWM for brightness control
 #ifdef TFT_BL
   ledcSetup(1, 300, 8);
   ledcAttachPin(TFT_BL, 1);
-  ledcWrite(1, 255);
-#endif
- 
-#ifdef TFT_BL
-  pinMode(TFT_BL, OUTPUT);
-  digitalWrite(TFT_BL, LOW); 
-  delay(500);
-  digitalWrite(TFT_BL, HIGH);
+  ledcWrite(1, brightness); // Use brightness variable
 #endif
 
+  Serial.println("Initializing UI...");
   ui_init();
   lv_timer_handler();
+  Serial.println("UI initialized");
+  
+  Serial.println("System initialization complete!");
+  Serial.println("Touch the ON/OFF buttons to control the LED");
 }
+
+// Function to set display brightness
+void setBrightness(int level) {
+  brightness = constrain(level, 0, 255);
+  ledcWrite(1, brightness);
+  Serial.print("Brightness set to: ");
+  Serial.println(brightness);
+}
+
+// Function to update status display (commented out since ui_StatusLabel is disabled)
+/*void updateStatusDisplay() {
+  unsigned long uptime = millis() / 1000; // Convert to seconds
+  char statusText[100];
+  
+  sprintf(statusText, "System Ready | LED: %s | Uptime: %lus", 
+          led ? "ON" : "OFF", uptime);
+  
+  lv_label_set_text(ui_StatusLabel, statusText);
+}*/
 
 void loop()
 {
-  if(led == 1)
-  // Serial.println(led);
-  digitalWrite(38, HIGH);
-  if(led == 0)
-  // Serial.println(led);
-  digitalWrite(38, LOW);
+  // Handle LED control
+  if(led == 1) {
+    digitalWrite(38, HIGH);
+  } else {
+    digitalWrite(38, LOW);
+  }
+  
+  // Update status display every 1 second (commented out for debugging)
+  /*if(millis() - lastUpdate > 1000) {
+    updateStatusDisplay();
+    lastUpdate = millis();
+  }*/
+  
+  // Handle LVGL timer
   lv_timer_handler();
   delay(10);
 }

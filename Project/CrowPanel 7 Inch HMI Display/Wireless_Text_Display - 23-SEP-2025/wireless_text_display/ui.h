@@ -28,11 +28,8 @@ extern "C" {
 // SCREEN: ui_Screen1
 void ui_Screen1_screen_init(void);
 extern lv_obj_t * ui_Screen1;
-void ui_event_Button1(lv_event_t * e);
-extern lv_obj_t * ui_Button1;
-extern lv_obj_t * ui_Label1;
-// extern lv_obj_t * ui_StatusLabel; // Commented out for debugging
-extern int led;
+extern lv_obj_t * ui_TextLabel[5]; // Array of 5 text labels
+extern lv_obj_t * ui_StatusLabel;
 // CUSTOM VARIABLES
 
 // EVENTS

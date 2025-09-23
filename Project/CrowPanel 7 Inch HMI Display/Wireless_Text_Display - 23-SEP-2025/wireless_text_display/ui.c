@@ -12,10 +12,8 @@
 // SCREEN: ui_Screen1
 void ui_Screen1_screen_init(void);
 lv_obj_t * ui_Screen1;
-void ui_event_Button1(lv_event_t * e);
-lv_obj_t * ui_Button1;
-lv_obj_t * ui_Label1;
-// lv_obj_t * ui_StatusLabel; // Commented out for debugging
+lv_obj_t * ui_TextLabel[5]; // Array of 5 text labels
+lv_obj_t * ui_StatusLabel;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -34,25 +32,6 @@ lv_obj_t * ui____initial_actions0;
 ///////////////////// ANIMATIONS ////////////////////
 
 ///////////////////// FUNCTIONS ////////////////////
-void ui_event_Button1(lv_event_t * e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        // Toggle LED state
-        led = !led;
-        
-        if(led) {
-            // LED is ON - set button to green and update text
-            lv_obj_set_style_bg_color(ui_Button1, lv_color_hex(0x00FF00), LV_PART_MAIN | LV_STATE_DEFAULT); // Green for ON
-            lv_label_set_text(ui_Label1, "LED ON");
-        } else {
-            // LED is OFF - set button to red and update text
-            lv_obj_set_style_bg_color(ui_Button1, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT); // Red for OFF
-            lv_label_set_text(ui_Label1, "LED OFF");
-        }
-    }
-}
 
 ///////////////////// SCREENS ////////////////////
 

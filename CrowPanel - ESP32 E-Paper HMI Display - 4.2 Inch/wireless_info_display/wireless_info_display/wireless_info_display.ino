@@ -21,11 +21,13 @@ WebServer server(80);
 #include <Fonts/FreeMonoBold24pt7b.h>
 #include <Fonts/FreeMonoBold18pt7b.h>
 #include <Fonts/FreeMonoBold12pt7b.h>
+
 GxEPD2_BW<GxEPD2_420_GYE042A87, GxEPD2_420_GYE042A87::HEIGHT> epd(GxEPD2_420_GYE042A87(CS, DC, RES, BUSY));
 
 // Display settings structure
 struct Row {
   String text;
+
   int fontSize;
   Row() : text(""), fontSize(18) {}
 };
@@ -401,7 +403,6 @@ void handleUpdate() {
 void setup() {
   Serial.begin(115200);
 
-
   epdPower(HIGH);
   epdInit();
   epd.fillScreen(GxEPD_WHITE);
@@ -416,10 +417,6 @@ void setup() {
   epd.print("Fusion Automate"); 
   epd.display();
   delay(2000);
-  epd.fillScreen(GxEPD_WHITE);
-  epd.hibernate(); 
-  epdPower(LOW);
-  
   
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
@@ -427,9 +424,33 @@ void setup() {
     delay(1000);
     Serial.println("Connecting to WiFi...");
   }
+  
+  // WiFi connected - show IP address
+  epd.fillScreen(GxEPD_WHITE);
+  epd.drawRect(0, 0, 400, 300, GxEPD_BLACK);
+  epd.setFont(&FreeMonoBold18pt7b);
+  epd.setCursor(60, 70);
+  epd.print("WiFi Connected");
+  
+  String ip = WiFi.localIP().toString();
+  epd.setFont(&FreeMonoBold12pt7b); // Smaller font for IP address
+  epd.setCursor(80, 150);
+  epd.print("IP: " + ip);
+  
+  epd.setFont(&FreeMonoBold18pt7b);
+  epd.setCursor(45, 230);
+  epd.print("Fusion Automate");
+  epd.display();
+  delay(10000); // Show IP for 10 seconds
+  
   Serial.println("Connected to WiFi");
   Serial.print("IP Address: ");
-  Serial.println(WiFi.localIP());
+  Serial.println(ip);
+  
+  // Clear screen for normal operation
+  epd.fillScreen(GxEPD_WHITE);
+  epd.hibernate(); 
+  epdPower(LOW);
   
   // Setup web server routes
   server.on("/", HTTP_GET, handleRoot);
@@ -440,6 +461,49 @@ void setup() {
   currentSettings.invertColors = false;  // Ensure default color scheme
   updateDisplay();
 }
+
+// void setup() {
+//   Serial.begin(115200);
+
+
+//   epdPower(HIGH);
+//   epdInit();
+//   epd.fillScreen(GxEPD_WHITE);
+//   epd.drawRect(0, 0, 400, 300, GxEPD_BLACK);
+//   epd.setFont(&FreeMonoBold24pt7b);
+//   epd.setCursor(90, 70);
+//   epd.print("Wireless");
+//   epd.setCursor(35, 150);
+//   epd.print("Info-Display");
+//   epd.setFont(&FreeMonoBold18pt7b);
+//   epd.setCursor(45, 230);
+//   epd.print("Fusion Automate"); 
+//   epd.display();
+//   delay(2000);
+//   epd.fillScreen(GxEPD_WHITE);
+//   epd.hibernate(); 
+//   epdPower(LOW);
+  
+  
+//   // Connect to Wi-Fi
+//   WiFi.begin(ssid, password);
+//   while (WiFi.status() != WL_CONNECTED) {
+//     delay(1000);
+//     Serial.println("Connecting to WiFi...");
+//   }
+//   Serial.println("Connected to WiFi");
+//   Serial.print("IP Address: ");
+//   Serial.println(WiFi.localIP());
+  
+//   // Setup web server routes
+//   server.on("/", HTTP_GET, handleRoot);
+//   server.on("/update", HTTP_POST, handleUpdate);
+//   server.begin();
+  
+//   // Initial display update with default settings
+//   currentSettings.invertColors = false;  // Ensure default color scheme
+//   updateDisplay();
+// }
 
 void loop() {
   server.handleClient();
