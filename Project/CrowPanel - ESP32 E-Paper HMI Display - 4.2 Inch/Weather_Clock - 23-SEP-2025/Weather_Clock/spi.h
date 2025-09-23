@@ -3,13 +3,21 @@
 
 #include <Arduino.h>
 
-//项目板子
-#define SCK 12
-#define MOSI 11
-#define RES 47
-#define DC 46
-#define CS 45
-#define BUSY 48
+
+// Board pin definitions
+#define EPD_PIN_SCK 12
+#define EPD_PIN_MOSI 11
+#define EPD_PIN_RES 47
+#define EPD_PIN_DC 46
+#define EPD_PIN_CS 45
+#define EPD_PIN_BUSY 48
+
+#define SCK EPD_PIN_SCK
+#define MOSI EPD_PIN_MOSI
+#define RES EPD_PIN_RES
+#define DC EPD_PIN_DC
+#define CS EPD_PIN_CS
+#define BUSY EPD_PIN_BUSY
 
 //#define SCK 12
 //#define MOSI 11
