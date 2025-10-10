@@ -54,7 +54,7 @@ $\color{Green}\Huge{\textbf{Getting Started Guide}}$
 📱 [+91-9974477759](https://wa.me/919974477759)
 
 🚀 **Telegram**  
-📲 [@pylin](https://t.me/pylin)
+📲 [@fusionautomate](https://t.me/fusionautomate)
 
 📧 **Email Us**  
 ✉️ [eng.innovativ@gmail.com](mailto:eng.innovativ@gmail.com)

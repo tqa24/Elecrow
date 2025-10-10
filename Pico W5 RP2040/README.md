@@ -40,3 +40,20 @@ $\color{Green}\Huge{\textbf{Getting Started Guide}}$
 5. ⏳️How to Connect the Elecrow Pico W5 Microcontroller Development Board (RP2040) to MQTT Broker | [Watch]
 
 ---
+
+<h1 align="center">📢 Let's Connect — We're Just a Tap Away!</h1>
+
+<div align="center">
+
+💬 **Call / WhatsApp**  
+📱 [+91-9974477759](https://wa.me/919974477759)
+
+🚀 **Telegram**  
+📲 [@fusionautomate](https://t.me/fusionautomate)
+
+📧 **Email Us**  
+✉️ [eng.innovativ@gmail.com](mailto:eng.innovativ@gmail.com)
+
+</div>
+
+---
