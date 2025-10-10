@@ -33,3 +33,20 @@ $\color{Green}\Huge{\textbf{Full Length}}$
 1. 🆓️Introducing Elecrow RC070S 7 inch 1024*600 IPS Capacitive Touch Monitor | [[Watch]](https://youtu.be/RcNEGfvhvcY)
 
 ---
+
+<h1 align="center">📢 Let's Connect — We're Just a Tap Away!</h1>
+
+<div align="center">
+
+💬 **Call / WhatsApp**  
+📱 [+91-9974477759](https://wa.me/919974477759)
+
+🚀 **Telegram**  
+📲 [@pylin](https://t.me/pylin)
+
+📧 **Email Us**  
+✉️ [eng.innovativ@gmail.com](mailto:eng.innovativ@gmail.com)
+
+</div>
+
+---

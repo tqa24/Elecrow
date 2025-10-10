@@ -32,4 +32,22 @@
 - [Elecrow CrowPanel Advance 5“ HMI Display](https://www.youtube.com/playlist?list=PLxrSjjYyzaaKqOLsh_1nvN9poLn2eJ5wY)  
 - [Elecrow CrowPanel ESP32 7” HMI Display](https://www.youtube.com/playlist?list=PLxrSjjYyzaaImkFRbGMiRHKIos24P5MyG)
 - [Elecrow RC070S 7 inch 1024*600 IPS Capacitive Touch Monitor](https://www.youtube.com/playlist?list=PLxrSjjYyzaaK9eb_jWrDb_oJYkYua4Cuy)
+
+---
+
+<h1 align="center">📢 Let's Connect — We're Just a Tap Away!</h1>
+
+<div align="center">
+
+💬 **Call / WhatsApp**  
+📱 [+91-9974477759](https://wa.me/919974477759)
+
+🚀 **Telegram**  
+📲 [@pylin](https://t.me/pylin)
+
+📧 **Email Us**  
+✉️ [eng.innovativ@gmail.com](mailto:eng.innovativ@gmail.com)
+
+</div>
+
 ---

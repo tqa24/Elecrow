@@ -45,3 +45,20 @@ $\color{Green}\Huge{\textbf{Getting Started Guide}}$
 2. ⏳️MQTT LVGL Dashboard using Elecrow CrowPanel ESP32 7” HMI Display: Arduino IDE Setup | [Watch]
 
 ---
+
+<h1 align="center">📢 Let's Connect — We're Just a Tap Away!</h1>
+
+<div align="center">
+
+💬 **Call / WhatsApp**  
+📱 [+91-9974477759](https://wa.me/919974477759)
+
+🚀 **Telegram**  
+📲 [@pylin](https://t.me/pylin)
+
+📧 **Email Us**  
+✉️ [eng.innovativ@gmail.com](mailto:eng.innovativ@gmail.com)
+
+</div>
+
+---
