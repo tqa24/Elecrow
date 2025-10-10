@@ -31,5 +31,5 @@
 - [Elecrow CrowPanel ESP32 4.2” E-Paper HMI Display](https://www.youtube.com/playlist?list=PLxrSjjYyzaaIhBG80QsCfWrLdsy1Q74GB)
 - [Elecrow CrowPanel Advance 5“ HMI Display](https://www.youtube.com/playlist?list=PLxrSjjYyzaaKqOLsh_1nvN9poLn2eJ5wY)  
 - [Elecrow CrowPanel ESP32 7” HMI Display](https://www.youtube.com/playlist?list=PLxrSjjYyzaaImkFRbGMiRHKIos24P5MyG)
-
+- [Elecrow RC070S 7 inch 1024*600 IPS Capacitive Touch Monitor](https://www.youtube.com/playlist?list=PLxrSjjYyzaaK9eb_jWrDb_oJYkYua4Cuy)
 ---

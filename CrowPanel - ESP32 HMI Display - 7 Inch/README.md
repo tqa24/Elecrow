@@ -1,4 +1,4 @@
-# Pico W5 Microcontroller Development Board RP2040 
+# Elecrow CorwPanel - ESp32 7" HMI Display
  
 ---
 <p align="center">

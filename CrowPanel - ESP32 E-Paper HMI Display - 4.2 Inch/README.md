@@ -1,4 +1,4 @@
-# Elecrow
+# Elecrow CrowPanel - ESP32 4.2" E-Paper HMI Display
 
 
 ---
