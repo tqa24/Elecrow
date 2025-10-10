@@ -22,6 +22,8 @@
 ---
 
 - [👨‍💻Thonny IDE](https://thonny.org/)
+
+𝐈𝐌𝐏𝐎𝐑𝐓𝐀𝐍𝐓
 - [⭐Elecrow Referral Link for 5$ Coupon](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
 
 ---
