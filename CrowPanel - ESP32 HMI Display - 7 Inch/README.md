@@ -22,10 +22,11 @@
 - [🛠️Libraries](https://www.elecrow.com/download/product/CrowPanel/ESP32-HMI/7.0-DIS08070H/Arduino_Tutorial/libraries.zip)
 - [👨‍💻Thonny IDE](https://thonny.org/)
 - [📖Wiki](https://www.elecrow.com/wiki/esp32-display-702727-intelligent-touch-screen-wi-fi26ble-800480-hmi-display.html)
-- [⭐Elecrow Referral Link for 5$ Coupon](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
+- [⭐Elecrow Referral Link for 5$ Coupon⭐](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
 
-|---------------|---------------|
-|ESP32 Board Arduino | V2.0.6 |
+| Component             | Version |
+|----------------------:|:--------|
+| ESP32 Arduino core    | V2.0.6  |
 
 ---
 
