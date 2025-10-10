@@ -19,10 +19,10 @@
 
 ---
 
-- [Firmware](https://github.com/papercodeIN/Elecrow/tree/main/Pico%20W5%20RP2040/MicroPyhon/Firmware)
-- [Thonny IDE](https://thonny.org/)
-- [Wiki](https://www.elecrow.com/wiki/PICO_W5_RP2040_Dev_Board.html)
-- [Elecrow Referral Link for 5$ Coupon](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
+- [🛠️Firmware](https://github.com/papercodeIN/Elecrow/tree/main/Pico%20W5%20RP2040/MicroPyhon/Firmware)
+- [👨‍💻Thonny IDE](https://thonny.org/)
+- [📖Wiki](https://www.elecrow.com/wiki/PICO_W5_RP2040_Dev_Board.html)
+- [⭐Elecrow Referral Link for 5$ Coupon](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
 
 ---
 
