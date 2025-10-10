@@ -1,6 +1,6 @@
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=papercodeIN.Elecrow" height="20" />
-# Elecrow
 
+# Elecrow
 
 ---
 <p align="center">
@@ -18,5 +18,10 @@
     <img src="https://img.shields.io/badge/SUBSCRIBE%20ON%20YOUTUBE-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Subscribe on YouTube" style="height: 40px;">
   </a>
 </p>
+
+---
+
+- [👨‍💻Thonny IDE](https://thonny.org/)
+- [⭐Elecrow Referral Link for 5$ Coupon](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
 
 ---
