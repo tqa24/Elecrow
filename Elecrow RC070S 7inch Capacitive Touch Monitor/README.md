@@ -19,6 +19,10 @@
 
 ---
 
+- [⭐Elecrow Referral Link for 5$ Coupon⭐](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
+
+---
+
 $\color{Green}\Huge{\textbf{Shorts}}$
 
 1. 🆓DIY Hacking Device using Kali Linux and Orange Pi 5 Plus | Elecrow 7 inch Touch Monitor | [[Watch]](https://youtube.com/shorts/2QzkEsFzLlw)
