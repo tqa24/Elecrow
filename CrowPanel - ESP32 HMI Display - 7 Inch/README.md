@@ -34,6 +34,7 @@
 | ⚙️ Component            | 🔢 Version |
 |------------------------|------------|
 | ESP32 Arduino Core     | `V2.0.6`   |
+| LVGL Library     | `V8.3.3`   |
 
 ---
 
