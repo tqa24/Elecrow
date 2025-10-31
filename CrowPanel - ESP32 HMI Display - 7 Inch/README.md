@@ -46,6 +46,47 @@ $\color{Green}\Huge{\textbf{Getting Started Guide}}$
 
 ---
 
+
+# 🟢 **Elecrow CrowPanel ESP32 7" HMI Display Resources**
+
+## 🔧 Essential Tools & Links
+
+- [🛠️ Libraries (Arduino)](https://www.elecrow.com/download/product/CrowPanel/ESP32-HMI/7.0-DIS08070H/Arduino_Tutorial/libraries.zip)
+- [👨‍💻 Thonny IDE (Python)](https://thonny.org/)
+- [📖 CrowPanel Wiki](https://www.elecrow.com/wiki/esp32-display-702727-intelligent-touch-screen-wi-fi26ble-800480-hmi-display.html)
+- [⭐ Elecrow Referral Link – Get $5 Coupon ⭐](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
+
+### 🔢 Component Version
+
+| ⚙️ Component            | 🔢 Version |
+|------------------------|------------|
+| ESP32 Arduino Core     | `V2.0.6`   |
+
+---
+
+## 🎬 Shorts Showcase
+
+| 🎥 Title | 🔗 Watch | 📁 Example |
+|--------|---------|------------|
+| 🆓 **CrowPanel 7" ESP32 HMI Display Demo** <br/> Elecrow | [Watch](https://youtube.com/shorts/n-mweJUiFVo) | — |
+| 🆓 **Unboxing CrowPanel 7" ESP32 HMI Display** <br/> Elecrow | [Watch](https://youtube.com/shorts/BTeFulyKxNg) | — |
+| 🆓 **Unboxing Gift: CrowPanel + WT32 ETH01** | [Watch](https://youtube.com/shorts/vdVA4N-6bIc) | — |
+| 🆓 **Desk Lamp Example** <br/> LVGL + Home Automation | [Watch](https://youtube.com/shorts/hmtIqroSycU) | [Example](https://github.com/papercodeIN/Embedded_Devices/blob/main/Elecrow/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Example/lvgl_desk_lamp.7z) |
+| 🆓 **Collision Circles Demo** <br/> LVGL | [Watch](https://youtube.com/shorts/wUxxCRZnBU4) | [Example](https://github.com/papercodeIN/Embedded_Devices/blob/main/Elecrow/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Demo_Examples/collisioncircles.7z) |
+| 🆓 **Squareline Studio Example** <br/> LVGL | [Watch](https://youtube.com/shorts/zOHKd8TkUtw) | [Example](https://github.com/papercodeIN/Embedded_Devices/blob/main/Elecrow/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Demo_Examples/squareline_example.7z) |
+
+---
+
+## 🚀 Getting Started Guide
+
+| 📘 Title | 🔗 Watch |
+|---------|----------|
+| 🆓 **Getting Started with CrowPanel ESP32 7”** <br/> Arduino IDE Setup + LVGL Demo | [Watch](https://youtu.be/WoOipX0rxyI) |
+| ⏳️ **MQTT LVGL Dashboard** <br/> Arduino IDE Setup | [Watch](https://youtube.com/shorts/placeholder) |
+
+---
+
+
 <h1 align="center">📢 Reach Out to Us for Any Queries ⤵️</h1>
 
 <table align="center">
