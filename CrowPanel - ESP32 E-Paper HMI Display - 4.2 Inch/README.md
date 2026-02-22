@@ -30,18 +30,21 @@
 
 ---
 
+## 🎬 Shorts Showcase  
 
-$\color{Green}\Huge{\textbf{Shorts}}$
+| # | 🎥 Title | 🔗 Watch | 📁 Example |  
+| - |--------------------|---------------------|------------------------|  
+| 1 | 🆓 **Unboxing Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display (400×300 Resolution) \| DIE07300S** | [Watch](https://youtube.com/shorts/f-3UW2KjgTg) | — |  
+| 2 | 🆓 **Unscrewing Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display \| ESP32 \| IoT \| CrowPanel** | [Watch](https://youtube.com/shorts/2TcVsKXQdiw) | — |  
+| 3 | 🆓 **Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display Demo \| ESP32 \| IoT \| IIoT \| CrowPanel** | [Watch](https://youtube.com/shorts/4ExmBatFqBo) | — |  
 
-1. 🆓Unboxing Elecrow CrowPanel ESP32 4.2” E-paper HMI Display with 400*300 Resolution | DIE07300S | [[Watch]](https://youtube.com/shorts/f-3UW2KjgTg)
-2. 🆓Unscrewing Elecrow CrowPanel ESP32 4.2” E-paper HMI Display | ESP32 | E-Paper | IoT | CrowPanel | [[Watch]](https://youtube.com/shorts/2TcVsKXQdiw)
-3. 🆓Elecrow CrowPanel ESP32 4.2” E-paper HMI Display Demo | ESP32 | E-Paper | IoT | IIoT | CrowPanel | [[Watch]](https://youtube.com/shorts/4ExmBatFqBo)
+## 📺 Full Length Showcase  
 
-$\color{Green}\Huge{\textbf{Full Videos}}$
-
-1. 🆓Elecrow CrowPanel ESP32 4.2” E-paper HMI Display Wifi_Http_Openweather Demo | ESP32 | E-Paper | IoT | IIoT | CrowPanel | [[Watch]](https://youtu.be/Arxx5Az528g)
-2. 🆓Elecrow CrowPanel ESP32 4.2” E-paper HMI Display Partial Refresh Demo | ESP32 | E-Paper | IoT | IIoT | CrowPanel | [[Watch]](https://youtu.be/N-Gtk1Eezy8)
-3. 🆓How to Build Weather Clock using Elecrow CrowPanel ESP32 4.2” E-paper HMI Display | ESP32 | E-Paper | IoT | IIoT | CrowPanel | [[Watch]](https://youtu.be/glicFgOt5Ew)
+| # | 🎥 Title | 🔗 Watch | 📁 Example |  
+| - |--------------------|---------------------|------------------------|  
+| 1 | 🆓 **Wifi_Http_Openweather Demo – Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display** | [Watch](https://youtu.be/Arxx5Az528g) | — |  
+| 2 | 🆓 **Partial Refresh Demo – Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display** | [Watch](https://youtu.be/N-Gtk1Eezy8) | — |  
+| 3 | 🆓 **How to Build Weather Clock using Elecrow CrowPanel ESP32 4.2” E‑paper HMI Display** | [Watch](https://youtu.be/glicFgOt5Ew) | — |  
 
 ---
 
