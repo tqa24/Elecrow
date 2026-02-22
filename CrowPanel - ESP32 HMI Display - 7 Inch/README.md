@@ -45,10 +45,10 @@
 | 1 | 🆓 **Elecrow CrowPanel 7" ESP32 HMI Display Demo** | [Watch](https://youtube.com/shorts/n-mweJUiFVo) | — |
 | 2 | 🆓 **Unboxing Elecrow CrowPanel 7" ESP32 HMI Display** | [Watch](https://youtube.com/shorts/BTeFulyKxNg) | — |
 | 3 | 🆓 **Unboxing Gift: CrowPanel + WT32 ETH01** | [Watch](https://youtube.com/shorts/vdVA4N-6bIc) | — |
-| 🆓 **Desk Lamp Example - LVGL + Home Automation**  | [Watch](https://youtube.com/shorts/hmtIqroSycU) | [Example]() |
-| 4 | 🆓 **Collision Circles Demo - LVGL** | [Watch](https://youtube.com/shorts/wUxxCRZnBU4) | [Example]() |
-| 5 | 🆓 **Squareline Studio Example - LVGL** | [Watch](https://youtube.com/shorts/zOHKd8TkUtw) | [Example]() |
-| 6 | 🆓 **Wireless Text Display** | [Watch](https://youtube.com/shorts/kWhKw6H5ELc?feature=share) | [Example](https://github.com/papercodeIN/Elecrow/tree/main/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Project/Wireless_Text_Display%20-%2023-SEP-2025/wireless_text_display) |
+| 4 | 🆓 **Desk Lamp Example - LVGL + Home Automation**  | [Watch](https://youtube.com/shorts/hmtIqroSycU) | [Example]() |
+| 5 | 🆓 **Collision Circles Demo - LVGL** | [Watch](https://youtube.com/shorts/wUxxCRZnBU4) | [Example]() |
+| 6 | 🆓 **Squareline Studio Example - LVGL** | [Watch](https://youtube.com/shorts/zOHKd8TkUtw) | [Example]() |
+| 7 | 🆓 **Wireless Text Display** | [Watch](https://youtube.com/shorts/kWhKw6H5ELc?feature=share) | [Example](https://github.com/papercodeIN/Elecrow/tree/main/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Project/Wireless_Text_Display%20-%2023-SEP-2025/wireless_text_display) |
 
 ---
 
