@@ -22,21 +22,25 @@
 - [⭐Elecrow Referral Link for 5$ Coupon⭐](https://www.elecrow.com/referral-program/Nzk5MjJqMnQ/)
 
 ---
+## 🎬 Shorts Showcase  
 
-$\color{Green}\Huge{\textbf{Shorts}}$
+| # | 🎥 Title | 🔗 Watch | 📁 Example |  
+| - |--------------------|---------------------|------------------------|  
+| 1 | 🆓 **DIY Hacking Device using Kali Linux and Orange Pi 5 Plus \| Elecrow 7" Touch Monitor** | [Watch](https://youtube.com/shorts/2QzkEsFzLlw) | — |  
+| 2 | 🆓 **DIY Hacking Device using Kali Linux and Orange Pi Zero 2W \| Elecrow 7" Touch Monitor** | [Watch](https://youtube.com/shorts/mrTSluhvyG8) | — |  
+| 3 | 🆓 **DIY Mini PC Using Orange Pi Zero 2W \| Ubuntu Noble XFCE Desktop Linux \| Elecrow 7" Touch Monitor** | [Watch](https://youtube.com/shorts/nx--eSX_oSY) | — |  
+| 4 | 🆓 **DIY Mini PC Using Orange Pi RV2 + Elecrow RC070S 7" IPS Capacitive Touch Monitor** | [Watch](https://youtube.com/shorts/1AmQC2Hfj5M) | — |  
+| 5 | 🆓 **DIY Mini PC Using Raspberry Pi Zero 2W + Elecrow RC070S 7" IPS Capacitive Touch Monitor** | [Watch](https://youtube.com/shorts/hnoBcceG8xI) | — |  
+| 6 | 🆓 **Unboxing Elecrow RC070S 7" 1024×600 IPS Capacitive Touch Monitor \| HDMI Display** | [Watch](https://youtube.com/shorts/idp_C4jGcUA) | — |  
 
-1. 🆓DIY Hacking Device using Kali Linux and Orange Pi 5 Plus | Elecrow 7 inch Touch Monitor | [[Watch]](https://youtube.com/shorts/2QzkEsFzLlw)
-2. 🆓DIY Hacking Device using Kali Linux and Orange Pi Zero 2W | Elecrow 7 inch Touch Monitor | [[Watch]](https://youtube.com/shorts/mrTSluhvyG8)
-3. 🆓DIY Mini PC Using Orange Pi Zero 2W | Ubuntu Noble XFCE Desktop Linux | Elecrow 7 inch Touch Monitor | [[Watch]](https://youtube.com/shorts/nx--eSX_oSY)
-4. 🆓DIY Mini PC Using Orange Pi RV2 and Elecrow RC070S 7 inch IPS Capacitive Touch Monitor | [[Watch]](https://youtube.com/shorts/1AmQC2Hfj5M)
-5. 🆓DIY Mini PC Using Raspberry Pi Zero 2 W and Elecrow RC070S 7 inch IPS Capacitive Touch Monitor | [[Watch]](https://youtube.com/shorts/hnoBcceG8xI)
-6. 🆓Unboxing Elecrow RC070S 7 inch 1024*600 IPS Capacitive Touch Monitor | Elecrow | HDMI Display | [[Watch]](https://youtube.com/shorts/idp_C4jGcUA)
+## 📺 Full Length Showcase  
 
-$\color{Green}\Huge{\textbf{Full Length}}$
-
-1. 🆓️Introducing Elecrow RC070S 7 inch 1024*600 IPS Capacitive Touch Monitor | [[Watch]](https://youtu.be/RcNEGfvhvcY)
+| # | 🎥 Title | 🔗 Watch | 📁 Example |  
+| - |--------------------|---------------------|------------------------|  
+| 1 | 🆓 **Introducing Elecrow RC070S 7" 1024×600 IPS Capacitive Touch Monitor** | [Watch](https://youtu.be/RcNEGfvhvcY) | — |  
 
 ---
+
 
 <h1 align="center">📢 Reach Out to Us for Any Queries ⤵️</h1>
 
