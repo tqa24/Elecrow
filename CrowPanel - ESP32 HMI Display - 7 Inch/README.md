@@ -49,6 +49,9 @@
 | 5 | 🆓 **Collision Circles Demo - LVGL** | [Watch](https://youtube.com/shorts/wUxxCRZnBU4) | [Example]() |
 | 6 | 🆓 **Squareline Studio Example - LVGL** | [Watch](https://youtube.com/shorts/zOHKd8TkUtw) | [Example]() |
 | 7 | 🆓 **Wireless Text Display** | [Watch](https://youtube.com/shorts/kWhKw6H5ELc?feature=share) | [Example](https://github.com/papercodeIN/Elecrow/tree/main/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Project/Wireless_Text_Display%20-%2023-SEP-2025/wireless_text_display) |
+| 8 | 🆓 **Dual Time Digital Clock - WiFi** | [Watch](https://youtube.com/shorts/ustcSW7BS_Y?feature=share) | [Example](https://github.com/papercodeIN/Elecrow/tree/main/CrowPanel%20-%20ESP32%20HMI%20Display%20-%207%20Inch/Project/Digital_Clock%20-%2023-SEP-2025/clock) |
+
+
 
 ---
 
